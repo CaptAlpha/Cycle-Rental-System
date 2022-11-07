@@ -100,6 +100,13 @@ module.exports.login = function (req, res) {
   return res.render("login");
 };
 
+module.exports.sellerlogin = function (req, res) {
+  if (req.isAuthenticated()) {
+    return res.redirect("/");
+  }
+  return res.render("seller-login");
+};
+
 module.exports.cartAdd = async function (req, res) {
   var productId = req.params.id;
   var quantity = req.body.quantity;

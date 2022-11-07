@@ -17,10 +17,13 @@ router.get('/products', homeController.products);
 router.get('/terms', homeController.terms);
 router.get('/testimonials', homeController.testimonials);
 router.get('/login', homeController.login);
+router.get('/seller-login', homeController.sellerlogin);
 
 router.post('/cart/add/:id',homeController.cartAdd);
 
 router.use('/users', require('./users'));
+router.use('/sellers', require('./sellers'))
+
 
 // for any further routes, access from here
 // router.use('/routerName', require('./routerfile));
